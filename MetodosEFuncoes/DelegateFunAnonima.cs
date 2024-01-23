@@ -12,6 +12,9 @@ namespace CursoCSharp.MetodosEFuncoes
 
         public static void Executar()
         {
+            Console.Write("Digite uma palavra: ");
+            string palavra = Console.ReadLine();
+
             StringOperacao inverter = delegate (string s)
             {
                 char[] charArray = s.ToCharArray();
@@ -19,7 +22,14 @@ namespace CursoCSharp.MetodosEFuncoes
                 return new string(charArray);
             };
 
-            Console.WriteLine(inverter("C# é show!!"));
+            if (palavra == inverter(palavra) )
+            {
+                Console.WriteLine($"{palavra} é um palíndormo");
+            }
+            else
+            {
+                Console.WriteLine($"{palavra} não é um palíndormo");
+            }
         }
     }
 }
